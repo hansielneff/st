@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+char *font = "MesloLGS NF:pixelsize=12:antialias=true:autohint=true";
 int borderpx = 2;
 
 /*
@@ -95,33 +95,29 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+    // 8 normal colors
+    [0] = "#282828",    // Background
+    [1] = "#CC241D",    // Red
+    [2] = "#98971A",    // Green
+    [3] = "#D79921",    // Yellow
+    [4] = "#458588",    // Blue
+    [5] = "#B16286",    // Purple
+    [6] = "#689D6A",    // Aqua
+    [7] = "#A89984",    // Gray
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+    // 8 bright colors
+    [8] = "#928374",    // Gray
+    [9] = "#FB4934",    // Red
+    [10] = "#B8BB26",   // Green
+    [11] = "#FABD2F",   // Yellow
+    [12] = "#83A598",   // Blue
+    [13] = "#D3869B",   // Purple
+    [14] = "#8EC07C",   // Aqua
+    [15] = "#EBDBB2",   // Foreground
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+    // Additional colors
+    [166] = "#D65D0E",  // Normal orange
+    [208] = "#FE8019"   // Bright orange
 };
 
 
@@ -129,10 +125,10 @@ const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
+unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
@@ -153,7 +149,7 @@ unsigned int rows = 24;
 /*
  * Default colour and shape of the mouse cursor
  */
-unsigned int mouseshape = XC_xterm;
+unsigned int mouseshape = XC_left_ptr;
 unsigned int mousefg = 7;
 unsigned int mousebg = 0;
 
